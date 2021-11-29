@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <title>Sindicato Criminoso de Gotham</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Estonia&family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <link href="./styles/style.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" href="../img/icone.jpg">
+</head>
+
+<body>
+
+  <!-- Hackeamento do batman  -->
+  <!-- Este input chekbox vai ser o reponsável por mudar o css 
+  Da forma que eu fiz ele vira um booleano (verdadeiro ou falso).
+  Ao clicar neste input que está sendo rotulado pelo "botão", representado pelo p, do formulário
+  ele muda algumas propriedades do css-->
+  <input type="checkbox" id="ischecked">
+  <!-- Este div está com "display: none;" ou seja ela não está em nenhum lugar da
+  página, até que eu clique no botão do formulário -->
+  <div id="hackeado">
+    <div class="txt-hacekado">
+      <p>Quando você apertou o botão para se filiar ao Sindicato do Crime,
+        você se tornou inimigo do maior detetive do mundo:
+      </p>
+      <p class="batsy"><strong>O BATMAN!!</strong></p>
+
+      <p>Você está sendo hackeado pelo morcegão!!</p>
+      <div class="fuga">
+        <!-- Este "p" é responsável pela "fuga do batman", ele basicamente só desmarca o checkbox acima -->
+        <div class="botao-fuga">
+          <label for="ischecked">
+            <p class="escape">Fugir!</p>
+          </label>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- /Hackeamento do batman  -->
+
+  <header>
+    <h1>Sindicato do Crime de Gotham</h1>
+  </header>
+
+  <aside>
+    <div class="container">
+
+      <div>
+        <h2>Membros</h2>
+      </div>
+
+      <div class="membros">
+
+        <div class="membro">
+          <a href="https://www.linkedin.com/in/arianesanchez/" target="_blank">
+            <img src="../img/Ari.png" alt="Ariane Sanchez">
+          </a>
+          <h3>Ariane Sanchez</h3>
+          <h4>1992</h4>
+        </div>
+
+        <div class="membro">
+          <a href="https://www.linkedin.com/in/jmlassi/" target="_blank">
+            <img src="../img/joaolassi.jpeg" alt="Joao Lassi">
+          </a>
+          <h3>João Lassi</h3>
+          <h4>1999</h4>
+        </div>
+
+        <div class="membro">
+          <a href="https://www.linkedin.com/in/ederson-alves-80b194101/" target="_blank">
+            <img src="../img/ederson.jpg" alt="Charada">
+          </a>
+          <h3>Ederson H. Alves</h3>
+          <h4>1991</h4>
+        </div>
+
+        <div class="membro">
+          <a href="https://pt.wikipedia.org/wiki/Joker_(DC_Comics)" target="_blank">
+            <img src="../img/coringa.jpg" alt="Coringa">
+            <a>
+              <h3>Coringa</h3>
+              <h4>1940</h4>
+        </div>
+
+        <div class="membro">
+          <a href="https://pt.wikipedia.org/wiki/Arlequina" target="_blank">
+            <img src="../img/arlequina.jpeg" alt="Arlequina">
+          </a>
+          <h3>Arlequina</h3>
+          <h4>1992</h4>
+        </div>
+
+        <div class="membro">
+          <a href="https://pt.wikipedia.org/wiki/Riddler" target="_blank">
+            <img src="../img/charada.jpg" alt="Charada">
+          </a>
+          <h3>Charada</h3>
+          <h4>1948</h4>
+        </div>
+
+        <div class="membro">
+          <a href="https://pt.wikipedia.org/wiki/Hera_Venenosa" target="_blank">
+            <img src="../img/poisonivy.jpg" alt="Hera Venenosa">
+          </a>
+          <h3>Hera Venenosa</h3>
+          <h4>1992</h4>
+        </div>
+
+        <div class="membro">
+          <a href="https://pt.wikipedia.org/wiki/Duas-Caras" target="_blank">
+            <img src="../img/duascaras.jpg" alt="Duas caras">
+          </a>
+          <h3>Duas Caras</h3>
+          <h4>1942</h4>
+        </div>
+
+        <div class="membro">
+          <a href="https://pt.wikipedia.org/wiki/Bane" target="_blank">
+            <img src="../img/bane.jpg" alt="Bane">
+          </a>
+          <h3>Bane</h3>
+          <h4>1993</h4>
+        </div>
+      </div>
+      
+    </div>
+
+  </aside>
+
+  <main>
+    <div>
+      <h2>Afiliação</h2>
+    </div>
+    <form action="/login" method="POST">
+      <div class="formulario">
+
+        <h3 class="malvindo"> Seja mal-vindo!</h3>
+
+        <p class="slogan">
+          Temos todo o tipo de maldade a oferecer. Prezamos pelo sofrimento do Batman e por amarrar mochila na carteira.
+        </p>
+
+        <div class="form-info">
+
+          <div class="campos">
+            <label for="pnome">
+              <h3>Codinome de Vilão:</h3>
+            </label>
+            <input type="text" id="pnome" name="pnome" placeholder="Codinome" maxlength="100">
+          </div>
+
+          <div class="campos">
+            <label for="email">
+              <h3>Melhor email:</h3>
+            </label>
+            <input type="text" id="email" name="email" placeholder="email@sindicatodocrime.com">
+          </div>
+
+          <div class="phone-data">
+            <div class="campos">
+              <label for="Telefone">
+                <h3>Telefone:</h3>
+              </label>
+              <input type="number" id="Telefone" name="Telefone" placeholder="(00)00000-0000)">
+            </div>
+            <div class="campos">
+              <label for="Data de nascimento">
+                <h3>Aniversário:</h3>
+              </label>
+              <input type="date" id="Data de nascimento" name="Data de nascimento">
+            </div>
+          </div>
+          
+        </div>
+
+        <div class="idades">
+          <h3>Maior de 18:</h3>
+          <input type="radio" name="idade" id="idadeMaior" value="M">
+          <label for="idadeMaior">Menor de idade</label>
+
+          <input type="radio" name="idade" id="idadeMenor" value="M">
+          <label for="idadeMenor">Maior de idade</label>
+        </div>
+
+        <div class="arsenal">
+
+          <h3>Seu arsenal é composto por:</h3>
+
+          <div class="armas-fogo">
+
+            <div>
+              <input type="checkbox" name="arma" id="armaf" value="A">
+              <label for="armaf">Arma de fogo</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="lamina" id="lamina" value="L">
+              <label for="lamina">Lâminas</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="laser" id="laser" value="LA">
+              <label for="laser">Laser</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="punho" id="punho" value="P">
+              <label for="punho">Punhos</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="missil" id="missil" value="M">
+              <label for="missil">Mísseis</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="fruta" id="fruta" value="F">
+              <label for="fruta">Fruta envenenada</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="news">
+          <input type="checkbox" name="receber" id="recebern" value="R">
+          <label for="recebern">Receba a newsletter e promoções de parceiros</label>
+        </div>
+
+        <div class="botoes-form">
+          <button type="reset" class="limpar">Limpar</button>
+          <label for="ischecked">
+            <span class="its-a-trap">Salvar</span>
+          </label>
+        </div>
+
+      </div>
+    </form>
+  </main>
+
+  <footer>
+    <div class="jokewaze">
+      <img src="../img/jokewaze.png" alt="Jokewaze">
+    </div>
+    
+    <div>
+      <h3>By: Ariane Sanchez, Ederson Alves e João Lassi</h3>
+
+      <div class="botao">
+        <a href="../img/Sindicatozap.png" target="_blank">
+          <img src="../img/botao.png" alt="Símbolo anti Batman">
+        </a>
+      </div>
+
+      <div>
+        <audio controls loop width:10px>
+          <source src="./audio/batman.mp3" type="audio/mp3" />
+          <source src="./audio/batman1.wav" type="audio/wav" />
+          <p> Infelizmente seu navegador não consegue reproduzir áudio.</p>
+        </audio>
+      </div>
+      <div class="batwaze">
+        <img src="../img/batwaze.png" alt="Batwaze">
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

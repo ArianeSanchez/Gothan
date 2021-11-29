@@ -1,0 +1,394 @@
+/* Resetando as margens do site */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* Display grid para orgnanizar o conteúdo em colunas */
+  display: grid;
+  
+  /* Dou o tamanho das colunas, a primeira etá em 700px e a segunda em 2fr */
+  grid-template-columns: 700px 2fr;
+  background-image: url("../img/gothan.jpg");
+  /* Coloco o tamanho do background como uma capa.
+  Dessa forma o background vai ficar do tamanho original */
+  background-size: cover;
+  /* Deixo o background fixado para quando rolar a página ter um efeito chamado de parallax, que consiste no plano de fundo se mover em velocidade diferente da barra de roalgem */
+  background-attachment: fixed;
+
+  font-family: 'Roboto', sans-serif;
+  color:white;
+
+  /* Configuro como vai ser o layout do conteúdo */
+  grid-template-areas:
+    'header header'
+    'aside main'
+    'footer footer';
+}
+
+body header {
+  padding: 10px;
+  background-color: #2622285e;
+
+  /* Nomeio o conteúdo para que possa configurar o layout */
+  grid-area: header;
+}
+
+body aside {
+  text-align: center;
+
+  /* Nomeio o conteúdo para que possa configurar o layout */
+  grid-area: aside;
+}
+
+body main {
+  /* Nomeio o conteúdo para que possa configurar o layout */
+  grid-area: main;
+}
+
+body footer {
+  padding: 25px;
+
+  text-align: center;
+
+  background-color: #2622285e;
+
+  /* Nomeio o conteúdo para que possa configurar o layout */
+  grid-area: footer;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  font-family: 'Estonia', cursive;
+  font-size: 70pt;
+  padding: 5px;
+
+  /* Adiciono espaço entre as letras do título */
+  letter-spacing: 15px;
+}
+
+h2 {
+  padding: 10px;
+  font-family: 'Estonia', cursive;
+  font-size: 40pt;
+  color: white;
+  text-align: center;
+}
+
+h3 {
+  width: 100%;
+  color: white;
+  text-align: center;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+h4 {
+  color: white;
+  text-align: center;
+}
+
+.galeria {
+  margin: 25px;
+  gap: 10px;
+  padding: 5px;
+}
+
+.membros {
+  /* Margin para deixar os membros centralizados */
+  margin-left: 60px;
+} 
+
+.membro img {
+  border-radius: 5px;
+  width: 150px;
+  height: 150px;
+  /* Adiciono uma borda ao membro */
+  border: solid 1px;
+  border-color: white;
+  cursor: pointer;
+}
+
+.membro {
+  margin: 20px;
+  float: left;
+  /* Adicionar tempo para dar sentimento de movimento e suavizar a animação */
+  transition: ease-in 200ms;
+}
+
+.membro:hover {
+  /* Aumenta o tamanho do elemento em 1.2x */
+  transform: scale(1.2);
+}
+
+.botao{
+  position: fixed; 
+  bottom: 2%; 
+  left: 88%; 
+  z-index: 100000;
+  cursor: help;
+}
+
+/* Com ">" seleciona apenas a imagem da classe */
+.botao>a>img{
+  width: 180px;
+  animation: spin 10s linear infinite;
+}
+/* Animção para rotacionar o botão anti batman */
+@keyframes spin {
+ 0% {
+  transform: rotatez(0deg);
+ }
+ 100% {
+  transform: rotatez(360deg);
+ }
+}
+
+/* Sendo hackeado pelo Batman */
+/* Defino que o checkbox não aparece no html em momento algum */
+#ischecked {
+  display: none;
+}
+/* Id hackeado que apenas está com "display: none;" até que cliquemos no checkbox */
+#hackeado{
+  display: none;
+  position: fixed;
+  padding: 100px;
+  margin-top: 50px;
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  z-index: 9999;
+  background-color: rgba(99, 99, 30, 0.555);
+}
+
+/* Quando clico no checkbox, ou no caso, no label dele, eu altero a visualizaão da div com id "hackeado" 
+que até então estava com "display: none;" para "display: block;"*/
+#ischecked:checked ~ #hackeado{
+  display: block;
+  background-image: url(/img/batman.jpg);
+}
+
+/* Esta é a parte onde eu altero as propriedades dos elementos (nas tags neste caso) para quando o checkbox está marcado */
+/* Só lembrando que "~" seleciona o elemento filho, e é por isso que eu coloquei o checkbox em cima de todas as propriedades no HTML */
+#ischecked:checked~header,
+#ischecked:checked~aside,
+#ischecked:checked~footer, 
+#ischecked:checked~main {
+  display: block;
+  margin: 10px; 
+  animation: hacked 2s linear infinite;
+}
+
+/* Apenas coloquei uma animação de rotação infinita para quando clicar no checkbox */
+@keyframes hacked {
+  0% {
+    opacity: 0.1;
+    ransform: rotatez(360deg);
+  }
+  100% {
+    opacity: 0.1;
+    transform: rotatez(360deg);
+  }
+}
+
+/* Texto que aparece quando o batman hackeia o cidadão desavisado */
+.txt-hacekado{
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  border-radius: 25px;
+  justify-content: center;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.541);
+}
+
+/* Aumento o tamanho da fonte do nomme do batman */
+.txt-hacekado>.batsy{
+  font-size: 40px;
+  /* distancio o topo e a parte inferior para mais destaque */
+  /* ps: quando tem dois valor fica o primeiro para em cima e embaixo e o segundo para as laterais */
+  margin: 20px 0;
+}
+
+/* Apenas deixando o botão de fuga noc entro */
+.botao-fuga{
+  display: flex;
+  justify-content: center;
+}
+
+/* Botão representando pela tag "p" para a fuga */
+.escape{
+  margin-top: 25px;
+  padding: 25px;
+  width: 250px;
+  color: white;
+  background-color: black;
+  border-radius: 25px;
+  cursor: help;
+}
+
+/* Estilização do botão com o hover */
+.escape:hover{
+  background-color: #fc4a1a;
+}
+/* Distanciando os campos do formulário */
+.campos{
+  margin: 8px 0;
+}
+
+/* Estilizando o Formulário */
+.campos>input{
+  display: flex;
+  justify-content: center;
+  height: 35px;
+  width: 100%; 
+  text-align: center;
+  font-size: 12px;
+  color: rgb(71, 81, 109);
+  border-radius: 20px;
+
+  transition: ease-in 300ms;
+}
+
+.campos>input:hover{
+  transform: scale(1.1);
+}
+
+/* No subtítulo "seja mal-vindo" */
+.malvindo{
+  /* Eu dimiuo o tamanho para evitar barra de rolagem lateral */
+  width: 70%;
+  font-size: 25px;
+  /* Adiciono margem no topo de 15 px e com "auto" posiciono ela no meio */
+  /* "auto" (quando usando em display block) calcula automaticamente as margens
+  e nesse caso calcula as margens laterais*/
+  margin: 15px auto;
+}
+
+.slogan{
+  font-size: 22px;
+  /* Adiciono margem no topo e na parte inferior do elemento */
+  margin: 25px 0;
+}
+
+.arsenal{
+  /* Aqui eu coloco um display:flex; e direciono ele como uma coluna, dessa forma, .armas-fogo,
+  os campos do arsenal ficam em bloco */
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(138, 135, 135, 0.39);
+  /* Diminuo o tamanho da div principal do arsenal para ajudar na centralizaçã */
+  width:80%;
+  /* Centralizo toda a div no meio */
+  margin: 0 auto;
+  /* Aumento o tamanho da div utilizando as margens internas */
+  padding: 25px;
+  /* coloco todo o texto para iniciar na esquerda */
+  text-align: left;
+  border-radius: 20px;
+}
+
+/* Dou um espaçamento na margem inferior do h3 para o incio dos checkbox's */
+.arsenal>h3{
+  margin-bottom: 15px;
+}
+
+/* Eu crio uma div para as armas e diminuo o  tamanho pela metade e posiono ela no meio */
+.armas-fogo{
+  margin: 0 auto;
+  width: 50%;
+}
+
+.formulario {
+  margin-top: 25px;
+  margin: 0 auto;
+  padding: 25px;
+  text-align: center;
+  width: 90%;
+  border-radius: 25px;
+  background-color: rgba(102, 101, 101, 0.281);
+}
+
+/* Seguindo a ordem das posições (cima, direita, baixo, esquerda */
+.idades ,.news{
+  margin: 10px 0 15px 0;
+}
+
+/* Para juntar a data com o telefone eu englobei os dois elementos com uma div e coloquei um display:flex; e depois um flex-direction:row para direcionar o conteúdo da div em forma de linha e por fim, centralizei tudo */
+/* Note que eu coloquei uma "," e depois adicionei outra classe, dessa forma eu consigo adicionar a mesma estilização para 2 ou mais classes */
+.phone-data, .botoes-form{
+  display: flex;
+  flex-direction: row;
+  /* Aqui eu posiciono os elementos de forma que os espaços entre elas (seja dentro e fora) seja iguais */
+  justify-content: space-evenly;
+}
+
+/* Estilização do botão "salvar" do formulário que está com a tag "p" */
+.its-a-trap, .limpar {
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  width: 200px;
+  margin-left: 25px; 
+  text-align: center;
+  font-size: 15px;
+  color: white;
+  /* Uma sombra para destacar o botão */
+  box-shadow: 1px 0.5px 3px rgb(163, 162, 162);
+  border-radius: 20px;
+  background-color: rgb(71, 81, 109);
+  cursor: pointer;
+  /* Transição para suavizar a animação */
+  transition: ease-in 100ms;
+}
+
+/* Nessa classe eu apenas adiconei outras cores e tirei a borda do botão*/
+/* Nota-se que eu fiz mais uma estilização mesmo já possuindo uma na classe acima.
+O css carrega de forma linear, ou seja, o que está em cima carrega primeiro, então por isso */
+.limpar {
+  background-color: rgb(165, 168, 182);
+  border: none;
+}
+
+.its-a-trap:hover {
+  background-color: rgb(105, 119, 160);
+}
+
+.limpar:hover {
+  background-color: rgb(105, 119, 160);
+}
+
+/* Animações do ícone do Batman e Coringa vistos no app Waze */
+.batwaze>img{
+  width: 6%;
+  animation: bat 6s linear infinite;
+  position: relative;
+}
+
+@keyframes bat {
+ 0% {
+  transform: translatex(-800px);
+ }
+ 100% {
+  transform: translatex(800px);
+ }
+}
+
+.jokewaze>img{
+  width: 6%;
+  animation: joke 6s linear infinite;
+  position: relative;
+}
+
+@keyframes joke {
+ 0% {
+  transform: translatex(800px);
+ }
+ 100% {
+  transform: translatex(-800px);
+ }
+}
